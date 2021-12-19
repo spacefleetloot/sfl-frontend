@@ -14,10 +14,12 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
       {
         label: t('Exchange'),
         href: '/swap',
+        parentHref: '/swap',
       },
       {
         label: t('Liquidity'),
         href: '/liquidity',
+        parentHref: '/swap',
       },
     ],
   },
@@ -29,10 +31,12 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
       {
         label: t('Farms'),
         href: '/farms',
+        parentHref: '/farms',
       },
       {
         label: t('Pools'),
         href: '/pools',
+        parentHref: '/farms',
       },
     ],
   },
@@ -45,14 +49,17 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
         label: t('Trading Competition'),
         href: '/competition',
         status: menuStatus.SOON,
+        parentHref: '/prediction',
       },
       {
         label: t('Prediction (BETA)'),
         href: '/prediction',
+        parentHref: '/prediction',
       },
       {
         label: t('Lottery'),
         href: '/lottery',
+        parentHref: '/prediction',
       },
     ],
   },
@@ -64,15 +71,17 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
       {
         label: t('Overview'),
         href: `${nftsBaseUrl}`,
+        parentHref: `${nftsBaseUrl}`,
       },
       {
         label: t('Collections'),
         href: `${nftsBaseUrl}/collections`,
+        parentHref: `${nftsBaseUrl}`,
       },
     ],
   },
   {
-    label: '',
+    label: 'More',
     href: '/info',
     icon: 'More',
     hideSubNav: true,
@@ -80,14 +89,17 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
       {
         label: t('Info'),
         href: '/info',
+        parentHref: '/info',
       },
       {
         label: t('IFO'),
         href: '/ifo',
+        parentHref: '/info',
       },
       {
         label: t('Voting'),
         href: '/voting',
+        parentHref: '/info',
       },
       {
         type: DropdownMenuItemType.DIVIDER,
@@ -95,6 +107,7 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
       {
         label: t('Leaderboard'),
         href: '/teams',
+        parentHref: '/info',
       },
       {
         type: DropdownMenuItemType.DIVIDER,
@@ -103,11 +116,13 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
         label: t('Blog'),
         href: 'https://medium.com/pancakeswap',
         type: DropdownMenuItemType.EXTERNAL_LINK,
+        parentHref: '/info',
       },
       {
         label: t('Docs'),
         href: 'https://docs.pancakeswap.finance',
         type: DropdownMenuItemType.EXTERNAL_LINK,
+        parentHref: '/info',
       },
     ],
   },

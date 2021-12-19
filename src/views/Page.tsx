@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { Flex } from '@pancakeswap/uikit'
 import { PageMeta } from '../components/Layout/Page'
 
+import Header from '../components/Layout/Navigation'
+
 const StyledPage = styled.div<{ $removePadding: boolean }>`
   display: flex;
   flex-direction: column;
@@ -53,6 +55,7 @@ const Page: React.FC<
   return (
     <>
       <PageMeta />
+      <Header />
       <StyledPage $removePadding={removePadding} {...props}>
         {children}
         <Flex flexGrow={1} />

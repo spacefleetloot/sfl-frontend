@@ -21,6 +21,9 @@ import { useLocation, NavLink } from "react-router-dom";
 import { Nav } from "react-bootstrap";
 import { useTranslation } from 'contexts/Localization'
 
+import UserMenu from "components/Menu/UserMenu";
+import GlobalSettings from 'components/Menu/GlobalSettings'
+
 // import logo from "assets/img/reactlogo.png";
 
 function Sidebar({ color, image, routes }) {
@@ -29,8 +32,8 @@ function Sidebar({ color, image, routes }) {
     return location.pathname.indexOf(routeName) > -1 ? "active" : "";
   };
   const { currentLanguage, setLanguage, t } = useTranslation()
-  console.log('routes', routes(t))
-  console.log(location)
+  const isActive = prop => location.pathname.includes(prop.href) || location.pathname.includes(prop.parentHref)
+
   return (
     <div className="sidebar" data-image={image}>
       <div
@@ -56,7 +59,7 @@ function Sidebar({ color, image, routes }) {
               return (
                 <li
                   className={
-                    location.pathname.includes(prop.href)
+                    isActive(prop)
                       ? "active"
                       : activeRoute(prop.layout + prop.path)
                   }
@@ -74,6 +77,24 @@ function Sidebar({ color, image, routes }) {
               );
             return null;
           })}
+          <li className="sidebar-actions">
+            <Nav className="ml-auto" navbar>
+              <Nav.Item>
+                <NavLink
+                  to='/settings'
+                  className="nav-link"
+                  activeClassName="active"
+                >
+                { t('Settings') }
+                </NavLink>
+              </Nav.Item>
+              <Nav.Item>
+                <div className="connect-btn">
+                  <UserMenu />
+                </div>
+              </Nav.Item>
+            </Nav>
+          </li>
         </Nav>
       </div>
     </div>

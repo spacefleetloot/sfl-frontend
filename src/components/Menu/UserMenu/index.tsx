@@ -12,12 +12,18 @@ import history from 'routerHistory'
 import useAuth from 'hooks/useAuth'
 import { useProfile } from 'state/profile/hooks'
 import ConnectWalletButton from 'components/ConnectWalletButton'
-import { FetchStatus, useGetBnbBalance } from 'hooks/useTokenBalance'
+
 import { useTranslation } from 'contexts/Localization'
 import { nftsBaseUrl } from 'views/Nft/market/constants'
 import WalletModal, { WalletView, LOW_BNB_BALANCE } from './WalletModal'
 import ProfileUserMenuItem from './ProfileUserMenutItem'
 import WalletUserMenuItem from './WalletUserMenuItem'
+
+import { FetchStatus, useGetBnbBalance } from '../../../hooks/useTokenBalance'
+
+// import useGetBnbBalance from '../../../hooks/useTokenBalance';
+
+console.log('dasf', useGetBnbBalance);
 
 const UserMenu = () => {
   const { t } = useTranslation()
