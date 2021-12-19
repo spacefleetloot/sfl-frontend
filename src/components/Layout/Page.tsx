@@ -8,18 +8,33 @@ import { useCakeBusdPrice } from 'hooks/useBUSDPrice'
 import Container from './Container'
 
 const StyledPage = styled(Container)`
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh - 10px);
   padding-top: 16px;
   padding-bottom: 16px;
+  background: url('/images/SFL_Background.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
   ${({ theme }) => theme.mediaQueries.sm} {
     padding-top: 24px;
     padding-bottom: 24px;
+    background: url('/images/SFL_Background.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
 
   ${({ theme }) => theme.mediaQueries.lg} {
     padding-top: 32px;
     padding-bottom: 32px;
+    background: url('/images/SFL_Background.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
 `
 

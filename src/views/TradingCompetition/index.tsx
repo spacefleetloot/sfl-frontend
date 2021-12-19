@@ -31,7 +31,7 @@ import TeamRanks from './components/TeamRanks'
 import { UserTradingInformationProps } from './types'
 
 const CompetitionPage = styled.div`
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh - 10px);
 `
 
 const BannerFlex = styled(Flex)`

@@ -10,7 +10,7 @@ const StyledPage = styled.div<{ $removePadding: boolean }>`
   width: 100%;
   padding: ${({ $removePadding }) => ($removePadding ? '0' : '16px')};
   padding-bottom: 0;
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh - 10px);
   background: url('/images/SFL_Background.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -39,7 +39,6 @@ const StyledPage = styled.div<{ $removePadding: boolean }>`
   ${({ theme }) => theme.mediaQueries.lg} {
     padding: ${({ $removePadding }) => ($removePadding ? '0' : '32px')};
     padding-bottom: 0;
-    min-height: calc(100vh - 100px);
     background: url('/images/SFL_Background.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
